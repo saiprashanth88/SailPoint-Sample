@@ -22,7 +22,7 @@ OrangeHR (HR System & HR Self Service)
 
 Features Implemented
 
-1. IdentityIQ Installation & Security
+**1. IdentityIQ Installation & Security**
 
 Installed IdentityIQ on CentOS with Tomcat and MySQL
 
@@ -34,7 +34,7 @@ Implemented internal access controls to limit dashboard functionality
 
 Configured audit logging for key events (email logs, triggered events)
 
-2. Data Loading & Integration
+**2. Data Loading & Integration**
 
 Integrated HR System (OrangeHR) via JDBC connector with authoritative data source
 
@@ -54,7 +54,7 @@ Full Enterprise Directory load: Every 60 mins
 
 HR Self Service update: Weekly at 2 AM CT
 
-3. Automated Provisioning
+**3. Automated Provisioning**
 
 Implemented Joiner Workflow:
 
@@ -78,7 +78,7 @@ Accounts moved to Terminated OU after 90 days
 
 HR Self Service accounts deleted after 90 days
 
-4. Role-Based Access Control (RBAC)
+**4. Role-Based Access Control (RBAC)**
 
 Assigned birthright roles based on department
 
@@ -90,7 +90,7 @@ Tool Design (cck-admin_app, mysql-admin_app, xcl-user_app)
 
 General Employees (vpn-corp_ssl)
 
-5. Access Request & Approval
+**5. Access Request & Approval**
 
 Configured self-service access request for:
 
@@ -106,7 +106,7 @@ Secondary approval for specific entitlements
 
 Automated reminder notifications (3, 6, and 9-day escalation)
 
-6. Attestation & Compliance
+**6. Attestation & Compliance**
 
 Manager Access Reviews: Every 6 months
 
@@ -118,7 +118,7 @@ Removed Risk Score & "Change Detected"
 
 Added Employee ID to attestation reports
 
-7. Preferred Attribute Change Form
+**7. Preferred Attribute Change Form**
 
 Implemented a dashboard-accessible Preferred Name Change Form
 
