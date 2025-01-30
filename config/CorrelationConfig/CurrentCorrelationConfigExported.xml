@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<CorrelationConfig name="ED Correlation" significantModified="1730962702269">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="emp_number" value="employeeNumber"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+<CorrelationConfig name="HR SS correlation"/>
+<CorrelationConfig name="HR Self correlation" significantModified="1731500349869">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="emp_number" value="emp_number"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+<CorrelationConfig name="EnterpriseDirectory Correlation Config" significantModified="1732297312598">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="emp_number" value="employeeNumber"/>
+  </AttributeAssignments>
+</CorrelationConfig>
+</sailpoint>

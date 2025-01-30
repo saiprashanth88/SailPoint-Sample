@@ -1,0 +1,1056 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<Application authoritative="true" connector="sailpoint.connector.JDBCConnector" featuresString="DISCOVER_SCHEMA, PROVISIONING, SYNC_PROVISIONING, DIRECT_PERMISSIONS, SEARCH, ENABLE, UNLOCK" icon="databaseIcon" name="HR" profileClass="" significantModified="1736767501835" type="JDBC">
+  <Attributes>
+    <Map>
+      <entry key="SQL" value="SELECT  hhe.emp_number,&#13;&#10;&#13;&#10;        hher.erep_sup_emp_number,&#13;&#10;&#13;&#10;        hhe.employee_id,&#13;&#10;&#13;&#10;        hhe.emp_lastname,&#13;&#10;&#13;&#10;        hhe.emp_firstname,&#13;&#10;&#13;&#10;        hhe.emp_middle_name,&#13;&#10;&#13;&#10;        CONCAT(hhe.emp_lastname, &quot;, &quot;, emp_firstname, &quot; &quot;, emp_middle_name) as fullname,&#13;&#10;&#13;&#10;        hhe.emp_birthday,&#13;&#10;&#13;&#10;        hhe.emp_gender,&#13;&#10;&#13;&#10;        hhe.emp_marital_status,&#13;&#10;&#13;&#10;        hhe.emp_other_id,&#13;&#10;&#13;&#10;        CONCAT(oes.name) as emp_status,&#13;&#10;&#13;&#10;        hhe.job_title_code,&#13;&#10;&#13;&#10;        ojt.job_title,&#13;&#10;&#13;&#10;CONCAT(hhe.work_station) as department_code,&#13;&#10;&#13;&#10;        CONCAT(os.name) as department,&#13;&#10;&#13;&#10;        hhe.emp_street1,&#13;&#10;&#13;&#10;        hhe.city_code,&#13;&#10;&#13;&#10;        CONCAT(hhe.coun_code) as iso2,&#13;&#10;&#13;&#10;        hhc.iso3,&#13;&#10;&#13;&#10;        CONCAT(hhc.cou_name) as country,&#13;&#10;&#13;&#10;        hhc.numcode,&#13;&#10;&#13;&#10;        IF(LENGTH(hhe.provin_code) &gt; 2, hhe.provin_code, hhp.province_name) as province,&#13;&#10;&#13;&#10;        hhe.emp_zipcode,&#13;&#10;&#13;&#10;        hhe.emp_hm_telephone,&#13;&#10;&#13;&#10;        hhe.emp_mobile,&#13;&#10;&#13;&#10;        hhe.emp_work_telephone,&#13;&#10;&#13;&#10;        hhe.joined_date,&#13;&#10;&#13;&#10;        oet.termination_date,&#13;&#10;&#13;&#10;        (SELECT MIN(date)&#13;&#10;&#13;&#10;        FROM orangehrm.ohrm_leave&#13;&#10;&#13;&#10;        WHERE emp_number = hhe.emp_number AND status = 2) as leave_start,&#13;&#10;&#13;&#10;        (SELECT MAX(date)&#13;&#10;&#13;&#10;        FROM orangehrm.ohrm_leave&#13;&#10;&#13;&#10;        WHERE emp_number = hhe.emp_number AND status = 2) as leave_end&#13;&#10;&#13;&#10;        FROM orangehrm.hs_hr_employee hhe&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.ohrm_employment_status oes on hhe.emp_status = oes.id&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.ohrm_job_title ojt on hhe.job_title_code = ojt.id&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.ohrm_subunit os on hhe.work_station = os.id&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.hs_hr_country hhc on hhe.coun_code = hhc.cou_code&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.hs_hr_province hhp on hhe.provin_code = hhp.province_code&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.ohrm_emp_termination oet on hhe.termination_id = oet.id&#13;&#10;&#13;&#10;        LEFT JOIN orangehrm.hs_hr_emp_reportto hher on hher.erep_sub_emp_number = hhe.emp_number;"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1736736716187</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1736736589883</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="compositeDefinition"/>
+      <entry key="connMaxRetry" value="3"/>
+      <entry key="connRetryEnable">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="connWaitTimeForRetry" value="2"/>
+      <entry key="deltaTable"/>
+      <entry key="driverClass" value="com.mysql.jdbc.Driver"/>
+      <entry key="getDeltaSQL"/>
+      <entry key="isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="jdbcExceptionBucketing">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="managerCorrelationFilter">
+        <value>
+          <Filter operation="EQ" property="emp_number" value="erep_sup_emp_number"/>
+        </value>
+      </entry>
+      <entry key="mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="noPermissions" value="false"/>
+      <entry key="operations" value="Create, Modify, Delete, Enable, Disable, Unlock"/>
+      <entry key="partitionMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="partitionStatements"/>
+      <entry key="password" value="%%HR_PASS%%"/>
+      <entry key="provisionRule" value="globalRule"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="JDBC Template"/>
+      <entry key="testConnSQL"/>
+      <entry key="url" value="jdbc:mysql://%%MY_HOST%%/orangehrm"/>
+      <entry key="useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedurePartition">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureTestConn">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="user" value="root"/>
+    </Map>
+  </Attributes>
+  <CustomizationRule>
+    <Reference class="sailpoint.object.Rule" name="DisableCustomization"/>
+  </CustomizationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Schemas>
+    <Schema displayAttribute="emp_number" identityAttribute="emp_number" instanceAttribute="" nativeObjectType="account" objectType="account" permissionsRemediationModificationType="None" significantModified="1736767501836">
+      <AttributeDefinition name="emp_number" type="string"/>
+      <AttributeDefinition name="erep_sup_emp_number" type="string"/>
+      <AttributeDefinition name="employee_id" type="string"/>
+      <AttributeDefinition name="emp_lastname" type="string"/>
+      <AttributeDefinition name="emp_firstname" type="string"/>
+      <AttributeDefinition name="emp_middle_name" type="string"/>
+      <AttributeDefinition name="fullname" type="string"/>
+      <AttributeDefinition name="emp_birthday" type="string"/>
+      <AttributeDefinition name="emp_gender" type="string"/>
+      <AttributeDefinition name="emp_marital_status" type="string"/>
+      <AttributeDefinition name="emp_other_id" type="string"/>
+      <AttributeDefinition name="emp_status" type="string"/>
+      <AttributeDefinition name="job_title_code" type="string"/>
+      <AttributeDefinition name="job_title" type="string"/>
+      <AttributeDefinition name="department_code" type="string"/>
+      <AttributeDefinition name="department" type="string"/>
+      <AttributeDefinition name="emp_street1" type="string"/>
+      <AttributeDefinition name="city_code" type="string"/>
+      <AttributeDefinition name="iso2" type="string"/>
+      <AttributeDefinition name="iso3" type="string"/>
+      <AttributeDefinition name="country" type="string"/>
+      <AttributeDefinition name="numcode" type="string"/>
+      <AttributeDefinition name="province" type="string"/>
+      <AttributeDefinition name="emp_zipcode" type="string"/>
+      <AttributeDefinition name="emp_hm_telephone" type="string"/>
+      <AttributeDefinition name="emp_mobile" type="string"/>
+      <AttributeDefinition name="emp_work_telephone" type="string"/>
+      <AttributeDefinition name="joined_date" type="string"/>
+      <AttributeDefinition name="termination_date" type="string"/>
+      <AttributeDefinition name="leave_start" type="string"/>
+      <AttributeDefinition name="leave_end" type="string"/>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard significantModified="1736767501835"/>
+</Application>
+<Application connector="sailpoint.connector.JDBCConnector" featuresString="DISCOVER_SCHEMA, PROVISIONING, SYNC_PROVISIONING, DIRECT_PERMISSIONS, SEARCH, ENABLE, UNLOCK" icon="databaseIcon" name="HR Self Service" profileClass="" significantModified="1736767522998" type="JDBC">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="HR Self correlation"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="SQL" value="SELECT * FROM `ohrm_user`;"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1736736600047</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1736736590979</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="compositeDefinition"/>
+      <entry key="connMaxRetry" value="3"/>
+      <entry key="connRetryEnable">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="connWaitTimeForRetry" value="2"/>
+      <entry key="deltaTable"/>
+      <entry key="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="getDeltaSQL"/>
+      <entry key="group.SQL" value="SELECT * FROM ohrm_user_role;"/>
+      <entry key="group.aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.deltaTable"/>
+      <entry key="group.driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="group.getDeltaSQL"/>
+      <entry key="group.isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.password" value="%%GRP_PASS%%"/>
+      <entry key="group.url" value="jdbc:mysql://%%MY_HOST%%/orangehrm"/>
+      <entry key="group.useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="group.user" value="root"/>
+      <entry key="groupProvisioning">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="jdbcCreateProvisioningRule" value="Create Provision Rule"/>
+      <entry key="jdbcDeleteProvisioningRule" value="JDBCDeleteRule"/>
+      <entry key="jdbcDisableProvisioningRule" value="JDBCDisableRule"/>
+      <entry key="jdbcExceptionBucketing">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="jdbcProvisionRule" value="JDBC Provisioning"/>
+      <entry key="mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="noGroupPermissions">
+        <value>
+          <Map>
+            <entry key="group">
+              <value>
+                <Boolean/>
+              </value>
+            </entry>
+          </Map>
+        </value>
+      </entry>
+      <entry key="noPermissions" value="false"/>
+      <entry key="operations" value="Create, Modify, Delete, Enable, Disable, Unlock"/>
+      <entry key="partitionMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="partitionStatements"/>
+      <entry key="password" value="%%HRSS_PASSWORD%%"/>
+      <entry key="provisionRule" value="operationRule"/>
+      <entry key="schemaProvisioningMap">
+        <value>
+          <Map>
+            <entry key="group">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+          </Map>
+        </value>
+      </entry>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="JDBC Template"/>
+      <entry key="testConnSQL" value="SELECT * FROM `ohrm_user`;"/>
+      <entry key="url" value="jdbc:mysql://%%MY_HOST%%/orangehrm"/>
+      <entry key="useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedurePartition">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureTestConn">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="user" value="root"/>
+    </Map>
+  </Attributes>
+  <CustomizationRule>
+    <Reference class="sailpoint.object.Rule" name="HRSS Customization"/>
+  </CustomizationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="Create" objectType="account" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="Create"/>
+        </Map>
+      </Attributes>
+      <Section name="Create">
+        <Field displayName="Emp_number" name="emp_number" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_number");</Source>
+          </Script>
+        </Field>
+        <Field displayName="User_password" name="user_password" type="secret"/>
+        <Field displayName="user_role_id" name="user_role_id" type="string" value="2"/>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Schemas>
+    <Schema displayAttribute="emp_number" identityAttribute="emp_number" instanceAttribute="" nativeObjectType="account" objectType="account" permissionsRemediationModificationType="None" significantModified="1736767522998">
+      <AttributeDefinition name="id" type="string"/>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="user_role_id" schemaObjectType="group" type="string"/>
+      <AttributeDefinition name="emp_number" type="string"/>
+      <AttributeDefinition name="user_name" type="string"/>
+      <AttributeDefinition name="deleted" type="string"/>
+      <AttributeDefinition name="status" type="string"/>
+      <AttributeDefinition name="date_entered" type="string"/>
+      <AttributeDefinition name="date_modified" type="string"/>
+      <AttributeDefinition name="modified_user_id" type="string"/>
+      <AttributeDefinition name="created_by" type="string"/>
+    </Schema>
+    <Schema descriptionAttribute="" displayAttribute="name" featuresString="PROVISIONING" identityAttribute="id" instanceAttribute="" nativeObjectType="group" objectType="group" permissionsRemediationModificationType="None" significantModified="1736767522998">
+      <AttributeDefinition entitlement="true" name="id" type="string"/>
+      <AttributeDefinition name="name" type="string"/>
+      <AttributeDefinition name="display_name" type="string"/>
+      <AttributeDefinition name="is_assignable" type="string"/>
+      <AttributeDefinition name="is_predefined" type="string"/>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard significantModified="1736767522998"/>
+</Application>
+<Application connector="sailpoint.connector.LDAPConnector" featuresString="AUTHENTICATE, PROVISIONING, SYNC_PROVISIONING, PASSWORD, MANAGER_LOOKUP, SEARCH" icon="directory2Icon" name="Enterprise Directory" profileClass="" significantModified="1736767488468" type="OpenLDAP - Direct">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="EnterpriseDirectory Correlation Config"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="LDAPApplicationVersion" value="2.0"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1736736676368</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1736736579036</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule" value="Terminated OU"/>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="authSearchAttributes">
+        <value>
+          <List>
+            <String>uid</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="authorizationType" value="simple"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="charsToEscapeAtEndInDN" value=" "/>
+      <entry key="charsToEscapeAtStartInDN" value=" #"/>
+      <entry key="charsToEscapeInDN" value=",+\&quot;&lt;&gt;;"/>
+      <entry key="charsToEscapeWhileProvisioning" value="/"/>
+      <entry key="compositeDefinition"/>
+      <entry key="convertHexToCharacter" value="true"/>
+      <entry key="disableAccountFilter">
+        <value>
+          <List>
+            <ListFilterValue operation="Equals" property="employeeType">
+              <Value>
+                <String>disabled</String>
+              </Value>
+            </ListFilterValue>
+          </List>
+        </value>
+      </entry>
+      <entry key="group.searchDNs">
+        <value>
+          <List>
+            <Map>
+              <entry key="iterateSearchFilter"/>
+              <entry key="objectType" value="group"/>
+              <entry key="searchDN" value="%%SEARCH_DN%%"/>
+              <entry key="searchScope" value="SUBTREE"/>
+            </Map>
+          </List>
+        </value>
+      </entry>
+      <entry key="groupProvisioning">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="host" value="%%MY_HOST%%"/>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="noGroupPermissions">
+        <value>
+          <Map>
+            <entry key="group">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+            <entry key="nisNetgroup">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+            <entry key="posixgroup">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+          </Map>
+        </value>
+      </entry>
+      <entry key="noPermissions" value="true"/>
+      <entry key="operations" value="Create, Modify, Delete, SetPassword"/>
+      <entry key="pageSize" value="100"/>
+      <entry key="password" value="%%ED_PASS%%"/>
+      <entry key="passwordAttr" value="userPassword"/>
+      <entry key="port" value="389"/>
+      <entry key="restoreAttr" value="employeeType"/>
+      <entry key="retryableErrors">
+        <value>
+          <List>
+            <String>Failed to connect to server</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="revokeAttr" value="employeeType"/>
+      <entry key="revokeVal" value="disabled"/>
+      <entry key="schemaProvisioningMap">
+        <value>
+          <Map>
+            <entry key="group">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+            <entry key="nisNetgroup">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+            <entry key="posixgroup">
+              <value>
+                <Boolean>true</Boolean>
+              </value>
+            </entry>
+          </Map>
+        </value>
+      </entry>
+      <entry key="searchDNs">
+        <value>
+          <List>
+            <Map>
+              <entry key="groupMembershipSearchScope">
+                <value>
+                  <List>
+                    <Map>
+                      <entry key="groupMemberFilterString"/>
+                      <entry key="groupMembershipSearchDN">
+                        <value>
+                          <List>
+                            <String>ou=groups,dc=sailpoint,dc=sp</String>
+                          </List>
+                        </value>
+                      </entry>
+                      <entry key="objectType" value="group"/>
+                    </Map>
+                  </List>
+                </value>
+              </entry>
+              <entry key="iterateSearchFilter"/>
+              <entry key="searchDN" value="%%GRP_SEARCH_DN%%"/>
+              <entry key="searchScope" value="SUBTREE"/>
+            </Map>
+          </List>
+        </value>
+      </entry>
+      <entry key="skipBackslashInFilter" value="true"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="OpenLDAP Template"/>
+      <entry key="useSSL">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="user" value="%%CN%%"/>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <PasswordPolicies>
+    <PasswordPolicyHolder significantModified="1736767489350">
+      <PolicyRef>
+        <Reference class="sailpoint.object.PasswordPolicy" name="Enterprise Directory"/>
+      </PolicyRef>
+    </PasswordPolicyHolder>
+  </PasswordPolicies>
+  <ProvisioningForms>
+    <Form name="account" objectType="account" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="account"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field name="uid" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+import sailpoint.object.QueryOptions;
+import sailpoint.object.Filter;
+String firstname = identity.getFirstname();
+String lastname = identity.getLastname();
+String uid = identity.getAttribute("uid");
+if(null != uid){
+	return uid;
+}
+if((null != firstname) &amp;&amp; (null != lastname)) {
+String name= firstname.toLowerCase() + "."+ lastname.toLowerCase();
+QueryOptions qo = new QueryOptions();
+Filter uidFilter = Filter.ignoreCase(Filter.like("uid", name, Filter.MatchMode.START));
+qo.addFilter(uidFilter);
+int total = context.countObjects(Identity.class, qo);
+if(total != 0) 
+{
+	name = name + total.toString();
+}
+return name.toLowerCase();
+}</Source>
+          </Script>
+        </Field>
+        <Field name="dn" type="string">
+          <Script>
+            <Source>return "uid="+uid+",ou=people,dc=sailpoint,dc=sp";</Source>
+          </Script>
+        </Field>
+        <Field displayName="con_prov_policy_ldap_password" helpKey="help_con_prov_policy_ldap_password" name="password" required="true" type="secret">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+              import sailpoint.object.Capability;
+              import sailpoint.object.ResourceObject;
+ 
+              import sailpoint.object.PasswordPolicy;
+              import sailpoint.api.PasswordGenerator;
+ 
+ 
+              PasswordPolicy policy=context.getObjectByName(PasswordPolicy.class,"Enterprise Directory");
+              String password = new PasswordGenerator(context).generatePassword(policy);
+              identity.setPassword(password);
+return password;</Source>
+          </Script>
+        </Field>
+        <Field name="employeeNumber" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_number");</Source>
+          </Script>
+        </Field>
+        <Field name="givenName" type="string">
+          <Script>
+            <Source>return identity.getFirstname();</Source>
+          </Script>
+        </Field>
+        <Field name="sn" type="string">
+          <Script>
+            <Source>return identity.getLastname();</Source>
+          </Script>
+        </Field>
+        <Field name="departmentNumber" type="string">
+          <Script>
+            <Source>return identity.getAttribute("department_code");</Source>
+          </Script>
+        </Field>
+        <Field name="cn" type="string">
+          <Script>
+            <Source>return identity.getAttribute("displayName");</Source>
+          </Script>
+        </Field>
+        <Field name="homePhone" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_hm_telephone");</Source>
+          </Script>
+        </Field>
+        <Field name="initials" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_middle_name");</Source>
+          </Script>
+        </Field>
+        <Field name="street" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_street1");</Source>
+          </Script>
+        </Field>
+        <Field name="physicalDeliveryOfficeName" type="string"/>
+        <Field name="postalCode" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_zipcode");</Source>
+          </Script>
+        </Field>
+        <Field name="title" type="string">
+          <Script>
+            <Source>return identity.getAttribute("job_title");</Source>
+          </Script>
+        </Field>
+        <Field name="telephoneNumber" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_mobile");</Source>
+          </Script>
+        </Field>
+        <Field name="postalAddress" type="string">
+          <Script>
+            <Source>return identity.getAttribute("emp_street")+","+identity.getAttribute("city_code")+","+identity.getAttribute("country");</Source>
+          </Script>
+        </Field>
+        <Field displayName="Email" name="mail" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+import sailpoint.object.QueryOptions;
+import sailpoint.object.Filter;
+
+String firstname = identity.getFirstname();
+String lastname = identity.getLastname();
+String mail = identity.getEmail();
+
+if(null != mail){
+	return mail;
+}
+if((null != firstname) &amp;&amp; (null != lastname)) {
+
+
+
+String localpart= firstname.toLowerCase() + "."+ lastname.toLowerCase();
+String domain = "@sailpoint.sp";           
+String genEmail= localpart + domain;
+
+QueryOptions qo = new QueryOptions();
+Filter emailFilter = Filter.ignoreCase(Filter.like("email", localpart, Filter.MatchMode.START));
+qo.addFilter(emailFilter);
+int total = context.countObjects(Identity.class, qo);
+if(total != 0) 
+{
+	genEmail = localpart + total.toString() + domain;
+}
+
+return genEmail;
+}</Source>
+          </Script>
+        </Field>
+      </Section>
+    </Form>
+    <Form name="group create" objectType="group" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="group create"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_group_DN" helpKey="help_con_prov_policy_ldap_group_DN" name="dn" required="true" reviewRequired="true" type="string"/>
+        <Field displayName="con_prov_policy_ldap_description" helpKey="help_con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+        <Field displayName="con_prov_policy_ldap_member" helpKey="help_con_prov_policy_ldap_member" name="uniqueMember" required="true" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+    <Form name="group create" objectType="posixgroup" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="group create"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_group_DN" helpKey="help_con_prov_policy_ldap_group_DN" name="dn" required="true" reviewRequired="true" type="string"/>
+        <Field displayName="con_prov_policy_ldap_GID" helpKey="help_con_prov_policy_ldap_GID" name="gidNumber" required="true" reviewRequired="true" type="int"/>
+        <Field displayName="con_prov_policy_ldap_description" helpKey="help_con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+    <Form name="group create" objectType="nisNetgroup" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="group create"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_group_DN" helpKey="help_con_prov_policy_ldap_group_DN" name="dn" required="true" reviewRequired="true" type="string"/>
+        <Field displayName="con_prov_policy_ldap_description" helpKey="help_con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+    <Form name="edit group" objectType="group" type="Update">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="edit group"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+    <Form name="edit group" objectType="posixgroup" type="Update">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="edit group"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+    <Form name="edit group" objectType="nisNetgroup" type="Update">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="edit group"/>
+        </Map>
+      </Attributes>
+      <Section>
+        <Field displayName="con_prov_policy_ldap_description" name="description" reviewRequired="true" type="string"/>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Schemas>
+    <Schema displayAttribute="cn" identityAttribute="dn" instanceAttribute="" nativeObjectType="inetOrgPerson" objectType="account" significantModified="1736767488479">
+      <AttributeDefinition name="businessCategory" type="string">
+        <Description>business category</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="carLicense" type="string">
+        <Description>vehicle license or registration plate</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="cn" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" type="string">
+        <Description>distinguished name for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="departmentNumber" type="string">
+        <Description>identifies a department within an organization</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="destinationIndicator" type="string">
+        <Description>destination indicator</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="displayName" type="string">
+        <Description>preferred name to be used when displaying entries</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeNumber" type="string">
+        <Description>numerically identifies an employee within an organization</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeType" type="string">
+        <Description>type of employment for a person</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="facsimileTelephoneNumber" type="string">
+        <Description>Facsimile (Fax) Telephone Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="givenName" type="string">
+        <Description>first name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="groups" schemaObjectType="group" type="string">
+        <Description>List of groups a user is a member</Description>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="posixgroups" schemaObjectType="posixgroup" type="string">
+        <Description>List of posix groups a user is a member</Description>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="nisNetgroups" schemaObjectType="nisNetgroup" type="string">
+        <Description>List of nisnet groups a user is a member</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="homePhone" type="string">
+        <Description>home telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="homePostalAddress" type="string">
+        <Description>home postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="initials" type="string">
+        <Description>initials of some or all of names, but not the surname(s).</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="internationaliSDNNumber" type="string">
+        <Description>international ISDN number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="l" type="string">
+        <Description>city</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="mail" type="string">
+        <Description>RFC822 Mailbox</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="manager" type="string">
+        <Description>DN of manager</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="mobile" type="string">
+        <Description>mobile telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="o" type="string">
+        <Description>organization this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="ou" type="string">
+        <Description>organizational unit this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="pager" type="string">
+        <Description>pager telephone number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="physicalDeliveryOfficeName" type="string">
+        <Description>Physical Delivery Office Name</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postOfficeBox" type="string">
+        <Description>Post Office Box</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postalAddress" type="string">
+        <Description>postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="postalCode" type="string">
+        <Description>postal code</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="preferredDeliveryMethod" type="string">
+        <Description>preferred delivery method</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="preferredLanguage" type="string">
+        <Description>preferred written or spoken language for a person</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="pwdReset" type="string">
+        <Description>specifies whether the password has been reset by admin</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="registeredAddress" type="string">
+        <Description>registered postal address</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="roomNumber" type="string">
+        <Description>room number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="secretary" type="string">
+        <Description>DN of secretary</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="seeAlso" type="string">
+        <Description>DN of related object</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="sn" type="string">
+        <Description>last (family) name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="st" type="string">
+        <Description>state or province which this object resides in</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="street" type="string">
+        <Description>street address of this object</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="telephoneNumber" type="string">
+        <Description>Telephone Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="teletexTerminalIdentifier" type="string">
+        <Description>Teletex Terminal Identifier</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="telexNumber" type="string">
+        <Description>Telex Number</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="title" type="string">
+        <Description>title associated with the entity</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="uid" type="string">
+        <Description>user identifier</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="objectClass" type="string">
+        <Description>object classes of the entity</Description>
+      </AttributeDefinition>
+      <CustomizationRule>
+        <Reference class="sailpoint.object.Rule" name="ED Customization"/>
+      </CustomizationRule>
+    </Schema>
+    <Schema aggregationType="group" descriptionAttribute="" displayAttribute="cn" featuresString="PROVISIONING" identityAttribute="dn" instanceAttribute="" nativeObjectType="posixgroup" objectType="posixgroup" significantModified="1736767488479">
+      <AttributeDefinition name="cn" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="memberUid" type="string">
+        <Description>unique member of a posixGroup</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" type="string">
+        <Description>Directory Path</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="gidNumber" type="string">
+        <Description>Group ID</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+      <Attributes>
+        <Map>
+          <entry key="groupMemberAttribute" value="memberUid"/>
+          <entry key="memberAttribute">
+            <value>
+              <List>
+                <String>cn</String>
+                <String>uid</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Schema>
+    <Schema aggregationType="group" descriptionAttribute="" displayAttribute="cn" featuresString="PROVISIONING" identityAttribute="dn" instanceAttribute="" nativeObjectType="nisNetgroup" objectType="nisNetgroup" significantModified="1736767488479">
+      <AttributeDefinition name="cn" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition multi="true" name="nisNetgroupTriple" type="string">
+        <Description>unique member of a nisNetgroup</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" type="string">
+        <Description>Directory Path</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+      <Attributes>
+        <Map>
+          <entry key="groupMemberAttribute" value="nisNetgroupTriple"/>
+          <entry key="memberAttribute">
+            <value>
+              <List>
+                <String>cn</String>
+                <String>uid</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="memberPrefix" value="{,"/>
+          <entry key="memberSuffix" value=",}"/>
+        </Map>
+      </Attributes>
+    </Schema>
+    <Schema descriptionAttribute="description" displayAttribute="cn" featuresString="PROVISIONING" identityAttribute="dn" instanceAttribute="" nativeObjectType="groupOfUniqueNames" objectType="group" significantModified="1736767488481">
+      <AttributeDefinition name="cn" type="string">
+        <Description>common name(s) for which the entity is known by</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="dn" type="string">
+        <Description>Directory Path</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="o" type="string">
+        <Description>organization this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="ou" type="string">
+        <Description>organizational unit this object belongs to</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="owner" type="string">
+        <Description>owner (of the object)</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description>descriptive information</Description>
+      </AttributeDefinition>
+      <Attributes>
+        <Map>
+          <entry key="groupMemberAttribute" value="uniqueMember"/>
+          <entry key="memberAttribute" value="dn"/>
+        </Map>
+      </Attributes>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard significantModified="1736767488476"/>
+</Application>
+</sailpoint>

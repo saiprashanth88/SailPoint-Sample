@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<AuthenticationQuestion question="auth_question_mothers_maiden_name" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_favorite_color" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_first_street" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_favorite_pets_name" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_childhood_best_friend" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_maternal_grandmother_firstname" significantModified="1731962335609"/>
+<AuthenticationQuestion question="auth_question_favorite_author" significantModified="1731962335609"/>
+</sailpoint>

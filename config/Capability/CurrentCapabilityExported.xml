@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+<Capability displayName="capability_system_administrator" name="SystemAdministrator">
+  <Description>capability_desc_system_administrator</Description>
+</Capability>
+<Capability displayName="capability_application_administrator" name="ApplicationAdministrator">
+  <Description>capability_desc_application_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplication"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageApplication"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountGroupMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationOwnerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationCentricCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationDecisionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationActivityReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMitigationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUncorrelatedIdentitiesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRemediationProgressReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplicationRiskScoreChart"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessGroup"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRiskModel"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccountGroups"/>
+    <Reference class="sailpoint.object.SPRight" name="ManagedAttributePropertyAdministrator"/>
+    <Reference class="sailpoint.object.SPRight" name="ManagedAttributeProvisioningAdministrator"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_workitem_administrator" name="WorkItemAdministrator">
+  <Description>capability_desc_workitem_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItems"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_identity_request_administrator" name="IdentityRequestAdministrator">
+  <Description>capability_desc_identity_request_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRequest"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentityRequest"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAttributeRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPasswordManagementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessEntitlementRequestStatusReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_password_administrator" name="PasswordAdministrator">
+  <Description>capability_desc_password_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="SetIdentityPassword"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_workgroup_administrator" name="WorkgroupAdministrator">
+  <Description>capability_desc_workgroup_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewWorkgroup"/>
+    <Reference class="sailpoint.object.SPRight" name="SetWorkgroupControlledScope"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageWorkgroup"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_it_role_administrator" name="ITRoleAdministrator">
+  <Description>capability_desc_it_role_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageITRoles"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_entitlement_role_administrator" name="EntitlementRoleAdministrator">
+  <Description>capability_desc_entitlement_role_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageEntitlementRoles"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_business_role_administrator" name="BusinessRoleAdministrator">
+  <Description>capability_desc_business_role_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageBusinessRoles"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_organizational_role_administrator" name="OrganizationalRoleAdministrator">
+  <Description>capability_desc_organization_role_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageOrganizationalRoles"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_role_administrator" name="RoleAdministrator" significantModified="1730784146118">
+  <Description>capability_desc_role_administrator</Description>
+  <InheritedCapabilities>
+    <Reference class="sailpoint.object.Capability" name="OrganizationalRoleAdministrator"/>
+    <Reference class="sailpoint.object.Capability" name="BusinessRoleAdministrator"/>
+    <Reference class="sailpoint.object.Capability" name="ITRoleAdministrator"/>
+    <Reference class="sailpoint.object.Capability" name="RapidSetupBirthrightRoleAdministrator"/>
+  </InheritedCapabilities>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplication"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAttributeDetails"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMitigationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessViolationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRemediationProgressReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleCompositionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleChangeMgmtReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationSignoffReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleMining"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleEntitlementsReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_policy_administrator" name="PolicyAdministrator">
+  <Description>capability_desc_policy_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewPolicy"/>
+    <Reference class="sailpoint.object.SPRight" name="ManagePolicy"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRiskModel"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRiskModel"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPolicyViolation"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationDecisionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMitigationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessViolationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRemediationProgressReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_compliance_officer" name="ComplianceOfficer">
+  <Description>capability_desc_compliance_officer</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewRiskScoreChart"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplicationRiskScoreChart"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationSchedule"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountGroupMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationOwnerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationCentricCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationDecisionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessManagerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationActivityReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMitigationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAdvancedCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUncorrelatedIdentitiesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessViolationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityEntitlementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRemediationProgressReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleCompositionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleChangeMgmtReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationSignoffReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationAccountAttributesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAttributeRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessEntitlementRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPasswordManagementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTargetedAccessReviewReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleEntitlementsReport"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAuditLog"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentityRequest"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPolicyViolation"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessGroup"/>
+    <Reference class="sailpoint.object.SPRight" name="CertificationCampaignsWidget"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_auditor" name="Auditor">
+  <Description>capability_desc_auditor</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRiskScoreChart"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplicationRiskScoreChart"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountGroupMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationOwnerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationCentricCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationDecisionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessManagerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationActivityReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMitigationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAdvancedCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUncorrelatedIdentitiesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessViolationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityEntitlementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRemediationProgressReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleCompositionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBusinessRoleMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleChangeMgmtReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessEntitlementRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAttributeRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountRequestStatusReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPasswordManagementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationSignoffReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationAccountAttributesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTargetedAccessReviewReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRoleEntitlementsReport"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewGroupCertification"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAuditLog"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentityRequest"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityEvents"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewLink"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPolicyViolation"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="CertificationCampaignsWidget"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_sign_off_administrator" name="SignOffAdministrator">
+  <Description>capability_desc_sign_off_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTask"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteSignOffResult"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_task_results_viewer" name="TaskResultsViewer">
+  <Description>capability_desc_task_results_viewer</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ReadTaskResults"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_identity_administrator" name="IdentityAdministrator">
+  <Description>capability_desc_identity_administrator</Description>
+  <InheritedCapabilities>
+    <Reference class="sailpoint.object.Capability" name="PasswordAdministrator"/>
+  </InheritedCapabilities>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="SetIdentityForwarding"/>
+    <Reference class="sailpoint.object.SPRight" name="SetIdentityAttribute"/>
+    <Reference class="sailpoint.object.SPRight" name="SetIdentityControlledScope"/>
+    <Reference class="sailpoint.object.SPRight" name="SetIdentityRole"/>
+    <Reference class="sailpoint.object.SPRight" name="EditIdentityEntDates"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteIdentityLink"/>
+    <Reference class="sailpoint.object.SPRight" name="MoveIdentityLink"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteIdentitySnapshot"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="UnlockIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityEvents"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationActivityReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAccountGroupMembershipReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessViolationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRoleReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityEntitlementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityApplicationRiskReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessGroup"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRisk"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccountGroups"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentityRequest"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_identity_correlation_administrator" name="IdentityCorrelationAdministrator">
+  <Description>capability_desc_identity_correlation_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityCorrelation"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteIdentityLink"/>
+    <Reference class="sailpoint.object.SPRight" name="MoveIdentityLink"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUncorrelatedIdentitiesReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityEntitlementReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationUserReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityRisk"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_certification_administrator" name="CertificationAdministrator">
+  <Description>capability_desc_certification_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessManagerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationOwnerCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAdvancedCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationDecisionReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessApplicationCentricCertificationReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertificationSignoffReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTargetedAccessReviewReport"/>
+    <Reference class="sailpoint.object.SPRight" name="CertifyAllCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="CertificationCampaignsWidget"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_scim_executor" name="SCIMExecutor">
+  <Description>capability_desc_scim_executor</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMResourceType"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMSchema"/>
+    <Reference class="sailpoint.object.SPRight" name="CreateSCIMUser"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMUser"/>
+    <Reference class="sailpoint.object.SPRight" name="UpdateSCIMUser"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteSCIMUser"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMApplication"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMEntitlement"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMAccount"/>
+    <Reference class="sailpoint.object.SPRight" name="CreateSCIMAccount"/>
+    <Reference class="sailpoint.object.SPRight" name="UpdateSCIMAccount"/>
+    <Reference class="sailpoint.object.SPRight" name="DeleteSCIMAccount"/>
+    <Reference class="sailpoint.object.SPRight" name="CreateSCIMAlert"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMAlert"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMWorkflow"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMTaskResult"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMObjectConfig"/>
+    <Reference class="sailpoint.object.SPRight" name="CreateSCIMLaunchedWorkflow"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMLaunchedWorkflow"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMPolicyViolation"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadSCIMCheckedPolicyViolation"/>
+    <Reference class="sailpoint.object.SPRight" name="CreateSCIMCheckedPolicyViolation"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_ws_executor" name="WebServicesExecutor">
+  <Description>capability_desc_ws_executor</Description>
+  <InheritedCapabilities>
+    <Reference class="sailpoint.object.Capability" name="SCIMExecutor"/>
+  </InheritedCapabilities>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="WebServices"/>
+    <Reference class="sailpoint.object.SPRight" name="PingWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetConfigurationWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="CheckRolePoliciesWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="RolesAssignablePermitsWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="ShowIdentityWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetIdentityListWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="CheckAuthorizationWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetTaskResultStatusWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetLinksWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="CheckPasswordPolicyWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="IdentityCreateWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="AggregateAccountWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="LaunchWorkflowWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="CancelWorkflowWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="RemoteLoginWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="PasswordInterceptWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="IdentityCreateOrUpdateWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetWorkItemCountWebService"/>
+    <Reference class="sailpoint.object.SPRight" name="GetIdentityNameByLinkWebService"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rule_administrator" name="RuleAdministrator">
+  <Description>capability_desc_rule_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ManageRules"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_help_desk" name="HelpDesk">
+  <Description>capability_desc_help_desk</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ManageHelpDeskRequests"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_access_manager" name="AccessManager">
+  <Description>capability_access_manager_desc</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessIdentityTriggers"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessReport"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPasswordManagementReport"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_managed_attribute_property_admin" name="ManagedAttributePropertyAdmin">
+  <Description>capability_desc_managed_attribute_property_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ManagedAttributePropertyAdministrator"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_managed_attribute_provisioning_admin" name="ManagedAttributeProvisioningAdmin">
+  <Description>capability_desc_managed_attribute_provisioning_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ManagedAttributePropertyAdministrator"/>
+    <Reference class="sailpoint.object.SPRight" name="ManagedAttributeProvisioningAdministrator"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_syslog_admin" name="SyslogAdministrator">
+  <Description>capability_desc_managed_attribute_provisioning_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewSyslog"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_form_admin" name="FormAdministrator">
+  <Description>capability_desc_form_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_plugin_admin" name="PluginAdministrator">
+  <Description>capability_desc_plugin_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessPlugin"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_alert_admin" name="AlertAdministrator">
+  <Description>capability_desc_alert_admin</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewAlert"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessAlertDefinition"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_view_admin_console" name="ViewAdminConsole">
+  <Description>capability_desc_view_admin_console</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewTaskManagement"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewProvisioningTransaction"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewEnvironmentMonitoring"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_full_admin_console" name="FullAccessAdminConsole">
+  <Description>capability_desc_full_admin_console</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTaskManagement"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessProvisioningTransaction"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessEnvironmentMonitoring"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_debug_pages_read_only_access" name="DebugPagesReadOnlyAccess">
+  <Description>capability_desc_debug_pages_read_only_access</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessAboutPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessDebugPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMemoryPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessCachesPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessCountPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessBeansPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessThreadsPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMetersPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMetersGridPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessLoggingPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessDatabasePage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessActiveMQPage"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_messagebus_administrator" name="MessageBusAdministrator">
+  <Description>capability_desc_messagebus_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMessageBusConfiguration"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_dataextract_administrator" name="DataExtractAdministrator">
+  <Description>capability_desc_dataextract_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessDataExtractConfiguration"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMessageBusConfiguration"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_accesshistory_administrator" name="AccessHistoryAdministrator">
+  <Description>capability_desc_accesshistory_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="AccessHistoryFullAccessConfiguration"/>
+    <Reference class="sailpoint.object.SPRight" name="AccessHistoryViewIdentityHistory"/>
+    <Reference class="sailpoint.object.SPRight" name="AccessHistoryExportIdentityHistory"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessMessageBusConfiguration"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_batch_request_administrator" name="BatchRequestAdministrator">
+  <Description>capability_desc_batch_request_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessBatchRequest"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapidsetup_configuration_read_only" name="RapidSetupConfigurationReadOnly">
+  <Description>capability_desc_rapidsetup_configuration_read_only</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRapidSetupConfiguration"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapidsetup_configuration_administrator" name="RapidSetupConfigurationAdministrator">
+  <Description>capability_desc_rapidsetup_configuration_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRapidSetupConfiguration"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapid_setup_read_only" name="RapidSetupReadOnly">
+  <Description>capability_desc_rapid_setup_read_only</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRapidSetup"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapid_setup" name="RapidSetupAdministrator">
+  <Description>capability_desc_rapid_setup</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessRapidSetup"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapidsetup_identity_operations_administrator" name="RapidSetupIdentityOperationsAdministrator">
+  <Description>capability_desc_rapidsetup_identity_operations_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessTerminateIdentity"/>
+  </RightRefs>
+</Capability>
+<Capability displayName="capability_rapidsetup_birthright_role_administrator" name="RapidSetupBirthrightRoleAdministrator">
+  <Description>capability_desc_rapidsetup_birthright_role_administrator</Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ManageRapidSetupBirthrightRoles"/>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessForms"/>
+  </RightRefs>
+</Capability>
+</sailpoint>
