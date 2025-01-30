@@ -1,10 +1,10 @@
-IdentityIQ Implementation Project
+**IdentityIQ Implementation Project**
 
 Overview
 
 This project involves the installation, configuration, and implementation of SailPoint IdentityIQ to manage identity governance and access control. The setup includes integrating various data sources, automating provisioning workflows, implementing role-based access control (RBAC), and configuring attestation processes.
 
-Technologies Used
+**Technologies Used**
 
 IdentityIQ (Latest version)
 
